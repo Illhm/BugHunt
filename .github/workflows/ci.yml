@@ -48,9 +48,15 @@ jobs:
           name: bughunt-builds
           path: dist/
 
-      # Build APK (Android)
+      # ✅ Build APK (Docker, nonaktifkan BuildKit)
       - name: Build APK
-        run: docker run --rm -v ${{ github.workspace }}:/app -w /app kivy/buildozer buildozer android debug
+        run: |
+          export DOCKER_BUILDKIT=0
+          docker run --rm \
+            -v ${{ github.workspace }}:/app \
+            -w /app \
+            kivy/buildozer:stable \
+            buildozer android debug
 
       # Upload APK
       - name: Upload APK
