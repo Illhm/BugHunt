@@ -70,27 +70,3 @@ BugHunt/
         └── ci.yml
 ```
 
-Workflow GitHub Actions berada pada `.github/workflows/ci.yml` dan akan
-membangun aplikasi secara otomatis menggunakan **PyInstaller**. Hasil build
-dapat diunduh melalui halaman **Actions** di GitHub.
-
-## 📱 Build Android APK
-Install buildozer lalu jalankan
-```bash
-pip install buildozer
-buildozer android debug
-```
-
-### Struktur Baru
-```
-BugHunt/
-├── main.py
-├── gui.py
-├── mobile.py
-├── buildozer.spec
-├── daftar-bug.txt
-├── README.md
-└── .github/
-    └── workflows/
-        └── ci.yml
-```
