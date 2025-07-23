@@ -70,5 +70,3 @@ BugHunt/
         └── ci.yml
 ```
 
-Workflow GitHub Actions berada pada `.github/workflows/ci.yml` dan akan
-menjalankan pengecekan sintaks otomatis setiap ada perubahan.
