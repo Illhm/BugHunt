@@ -47,3 +47,28 @@ python3 main.py -f daftar-bug.txt --timeout 5
 - Tool ini **hanya melakukan handshake WebSocket** (cek koneksi, pastikan TANPA REGULER).
 
 ---
+
+## 🖱️ Integrasi Aplikasi GUI
+BugHunt juga dapat dijalankan melalui aplikasi desktop sederhana menggunakan **Tkinter**.
+Aplikasi ini memungkinkan Anda memasukkan satu domain secara langsung atau memilih
+file `.txt` yang berisi daftar domain/BUG yang akan dipindai.
+
+### Menjalankan GUI
+```bash
+python3 gui.py
+```
+
+### Struktur Proyek
+```
+BugHunt/
+├── main.py
+├── gui.py
+├── daftar-bug.txt
+├── README.md
+└── .github/
+    └── workflows/
+        └── ci.yml
+```
+
+Workflow GitHub Actions berada pada `.github/workflows/ci.yml` dan akan
+menjalankan pengecekan sintaks otomatis setiap ada perubahan.

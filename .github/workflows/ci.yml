@@ -1,0 +1,21 @@
+name: BugHunt CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+      - name: Run syntax check
+        run: python -m py_compile main.py gui.py
+      - name: Display help
+        run: python main.py -h
