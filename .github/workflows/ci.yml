@@ -10,38 +10,32 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
-      # Install dependencies (dari branch codex)
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install pyinstaller
 
-      # Run syntax check (dari branch main)
       - name: Run syntax check
         run: python -m py_compile main.py gui.py
 
-      # Display help (dari branch main)
       - name: Display help
         run: python main.py -h
 
-      # Build CLI (dari branch codex)
       - name: Build CLI
         run: pyinstaller --onefile main.py
 
-      # Build GUI (dari branch codex)
       - name: Build GUI
         run: pyinstaller --onefile gui.py
 
-      # Upload artifacts (dari branch codex)
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: bughunt-builds
           path: dist/
