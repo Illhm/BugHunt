@@ -70,6 +70,3 @@ BugHunt/
         └── ci.yml
 ```
 
-Workflow GitHub Actions berada pada `.github/workflows/ci.yml` dan akan
-membangun aplikasi secara otomatis menggunakan **PyInstaller**. Hasil build
-dapat diunduh melalui halaman **Actions** di GitHub.

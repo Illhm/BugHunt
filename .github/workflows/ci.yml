@@ -1,4 +1,8 @@
+#<<<<<<< codex/integrate-input-layout-and-github-action
 name: Build BugHunt
+#=======
+name: BugHunt CI
+#>>>>>>> main
 
 on:
   push:
@@ -15,6 +19,7 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: '3.x'
+#<<<<<<< codex/integrate-input-layout-and-github-action
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -28,3 +33,9 @@ jobs:
         with:
           name: bughunt-builds
           path: dist/
+#=======
+      - name: Run syntax check
+        run: python -m py_compile main.py gui.py
+      - name: Display help
+        run: python main.py -h
+#>>>>>>> main
